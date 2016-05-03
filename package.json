@@ -1,0 +1,23 @@
+{
+  "name": "ionic-platform-push",
+  "version": "0.0.1",
+  "description": "A node library for sending push notifications with the Ionic Platform.",
+  "main": "src/push.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fuiste/ionic-push-node.git"
+  },
+  "author": "William Pelrine <rudy@ionic.io> (https://github.com/Fuiste)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fuiste/ionic-push-node/issues"
+  },
+  "homepage": "https://github.com/Fuiste/ionic-push-node",
+  "dependencies": {
+    "https": "^1.0.0",
+    "q": "^1.4.1"
+  }
+}

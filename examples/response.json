@@ -1,0 +1,23 @@
+{
+  "state": "enqueued",
+  "uuid": "your-notification-uuid",
+  "created": "2016-05-03T01:44:46.455563+00:00",
+  "config": {
+    "profile": "dev",
+    "tokens": [
+      "some-token"
+    ],
+    "notification": {
+      "message": "Hello world!",
+      "title": "Hi",
+      "ios": {
+        "message": "Hello iOS!"
+      },
+      "android": {
+        "message": "Hello Android!"
+      }
+    }
+  },
+  "app_id": "your-app-id",
+  "status": "open"
+}

@@ -1,0 +1,15 @@
+{
+  "tokens": ["some-token"],
+  "notification": {
+    "title": "Hi",
+    "message": "Hello world!",
+    "android": {
+      "title": "Hey",
+      "message": "Hello Android!"
+    },
+    "ios": {
+      "title": "Howdy",
+      "message": "Hello iOS!"
+    }
+  }
+}
