@@ -78,3 +78,10 @@ var config = {
 ```
 
 This will default notifications you send to the specified profile of none is present.
+
+## Todos
+
+- [ ] Write some tests
+- [ ] Token invalidation
+- [ ] Getting tokens for user_ids
+ 
