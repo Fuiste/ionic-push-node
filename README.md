@@ -51,3 +51,19 @@ var sender = Push({
 
 sender.status(uuid);
 ```
+
+## Promises
+
+Both `send` and `status` return promises, which work like so:
+
+```javascript
+sender.send(fixture).then(function(success) {
+  uuid = success.uuid;
+  console.log(success);
+  setTimeout(stat, 5000);
+}, function(errors) {
+  console.warn(errors);
+});
+```
+
+Check out the `examples` folder to see what those resolves and rejects will give you.

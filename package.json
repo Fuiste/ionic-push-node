@@ -11,7 +11,12 @@
     "url": "https://github.com/Fuiste/ionic-push-node.git"
   },
   "author": "William Pelrine <rudy@ionic.io> (https://github.com/Fuiste)",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/Fuiste/ionic-push-node/issues"
   },
