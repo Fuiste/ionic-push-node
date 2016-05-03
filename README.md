@@ -57,7 +57,7 @@ sender.status(uuid);
 Both `send` and `status` return promises, which work like so:
 
 ```javascript
-sender.send(fixture).then(function(success) {
+sender.send(notification).then(function(success) {
   uuid = success.uuid;
   console.log(success);
   setTimeout(stat, 5000);
@@ -66,4 +66,17 @@ sender.send(fixture).then(function(success) {
 });
 ```
 
-Check out the `examples` folder to see what those resolves and rejects will give you.
+Check out the [examples folder](https://github.com/Fuiste/ionic-push-node/tree/master/examples) to see what those resolves and rejects will give you.
+
+## Set a Default Profile
+
+To specify a profile to use by default, simply update your config object to inclide a `profile` field like so:
+
+```javascript
+var config = {
+  "api_key": "yourKey",
+  "profile": "yourProfile"
+}
+```
+
+This will default notifications you send to the specified profile of none is present.
