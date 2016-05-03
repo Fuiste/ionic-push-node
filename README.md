@@ -2,6 +2,8 @@
 
 A node.js client for creating and sending Ionic Push notifications
 
+If you haven't, [read the docs](http://docs.ionic.io/docs/push-overview)!
+
 ## Installation
 
 ```bash
@@ -84,4 +86,3 @@ This will default notifications you send to the specified profile of none is pre
 - [ ] Write some tests
 - [ ] Token invalidation
 - [ ] Getting tokens for user_ids
- 
