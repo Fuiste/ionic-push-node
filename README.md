@@ -12,7 +12,7 @@ npm install --save ionic-platform-push
 
 ## Basic Usage
 
-#### Send a push:
+#### Initialize the Service
 
 ```javascript
 var Push = require('ionic-platform-push');
@@ -20,7 +20,11 @@ var Push = require('ionic-platform-push');
 var sender = Push({
   "api_key": "yourKey"
 });
+```
 
+#### Send a push:
+
+```javascript
 var notification = {
   "tokens": ["someToken"],
   "profile": "someProfile"
@@ -44,12 +48,7 @@ sender.send(notification);
 #### Check the status of a push:
 
 ```javascript
-var Push = require('ionic-platform-push');
-
 var uuid = "some-notification-uuid";
-var sender = Push({
-  "api_key": "yourKey"
-});
 
 sender.status(uuid);
 ```
@@ -57,12 +56,6 @@ sender.status(uuid);
 #### Get a list of recent tokens:
 
 ```javascript
-var Push = require('ionic-platform-push');
-
-var sender = Push({
-  "api_key": "yourKey"
-});
-
 sender.tokens().then(function(tokens) {
   console.log(tokens);
 });
