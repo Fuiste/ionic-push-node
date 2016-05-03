@@ -1,3 +1,8 @@
+## 1.1.2
+
+* Refactor examples
+* Add more examples 
+
 ## 1.1.1
 
 * Added ability to list recent tokens
