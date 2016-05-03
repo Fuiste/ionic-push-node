@@ -50,7 +50,9 @@ sender.send(notification);
 ```javascript
 var uuid = "some-notification-uuid";
 
-sender.status(uuid);
+sender.status(uuid).then(function(status){
+  console.log(status);
+});
 ```
 
 #### Get a list of recent tokens:
