@@ -70,7 +70,7 @@ sender.tokens().then(function(tokens) {
 
 ## Promises
 
-Both `send` and `status` return promises, which work like so:
+Everything returns promises, which work like so:
 
 ```javascript
 sender.send(notification).then(function(success) {
