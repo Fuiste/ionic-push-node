@@ -58,9 +58,7 @@ Both `send` and `status` return promises, which work like so:
 
 ```javascript
 sender.send(notification).then(function(success) {
-  uuid = success.uuid;
   console.log(success);
-  setTimeout(stat, 5000);
 }, function(errors) {
   console.warn(errors);
 });
