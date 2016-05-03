@@ -1,6 +1,20 @@
 var internet = require('https'),
     q = require('q');
 
+var handleIonicResponse = function(res) {
+  var errors = [];
+  var parsed = JSON.parse(res);
+  if (parsed.error) {
+    if (parsed.error.details) {  // Get the description of each error that happened
+      parsed.error.details.forEach(function(err) {
+        errors.push(err);
+      });
+    } else {  // It's a general error, just grab it
+      errors.push(parsed.error);
+    }
+  }
+}
+
 module.exports = function(config) {
   /**
    * Constructor
@@ -40,7 +54,7 @@ module.exports = function(config) {
     var deferred = q.defer();
     var errors = [];
 
-    // Set profile to deafult, if present
+    // Set profile to default, if present
     if (!notification.profile && this.profile) {
       notification.profile = this.profile;
     }
@@ -90,6 +104,64 @@ module.exports = function(config) {
 
     // Send that push!
     req.write(JSON.stringify(notification));
+    req.end();
+
+    return deferred.promise;
+  };
+
+  /**
+   * Check the status of a notification, resolve with individual message stats
+   *
+   * @param {String} uuid the notification uuid
+   */
+  push.status = function(uuid) {
+    var deferred = q.defer();
+    var errors = [];
+
+    // Create request opts
+    var options = {
+      hostname: 'api.ionic.io',
+      path: '/push/notifications/' + uuid + '/messages',
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + this.jwt
+      }
+    };
+
+    // Create request
+    var req = internet.request(options, function(res) {
+      res.setEncoding('utf8');
+      res.on('data', function(resp) {
+        var parsed = JSON.parse(resp);
+        if (parsed.error) {
+          if (parsed.error.details) {  // Get the description of each error that happened
+            parsed.error.details.forEach(function(err) {
+              errors.push(err);
+            });
+          } else {  // It's a general error, just grab it
+            errors.push(parsed.error);
+          }
+        }
+
+        // Update the promise
+        if (errors.length) {
+          deferred.reject(errors);
+        } else if (parsed.data) {
+          deferred.resolve(parsed.data);
+        } else {
+          errors.push("ERROR: Server returned no data");
+          deferred.reject(errors);
+        }
+      });
+    });
+
+    req.on('error', function(error) {
+      errors.push(error);
+      deferred.reject(errors);
+    });
+
+    // Get that status!
     req.end();
 
     return deferred.promise;

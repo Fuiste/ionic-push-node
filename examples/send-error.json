@@ -1,0 +1,7 @@
+[
+  {
+    "parameter": "profile",
+    "errors": [ "Profile tag can only contain lowercase characters and underscores, with no spaces." ],
+    "error_type": "invalid"
+  }
+]

@@ -1,0 +1,33 @@
+[
+    {
+      "created": "2016-05-03T01:44:46.544025+00:00",
+      "token": {
+        "created": "2016-05-03T01:26:33.486711+00:00",
+        "token": "some-token",
+        "type": "android",
+        "id": "some-token-id",
+        "app_id": "app-id",
+        "valid": true
+      },
+      "user_id": "some-user-uuid",
+      "uuid": "some-message-uuid",
+      "status": "sent",
+      "notification": "notification-uuid"
+    },
+    {
+      "created": "2016-05-03T01:44:46.544025+00:00",
+      "token": {
+        "created": "2016-05-03T01:26:33.486711+00:00",
+        "token": "some-other-token",
+        "type": "ios",
+        "id": "some-other-token-id",
+        "app_id": "app-id",
+        "valid": true
+      },
+      "user_id": null,
+      "uuid": "some-other-message-uuid",
+      "status": "error",
+      "error": "APNS_BAD_CERTIFICATE",
+      "notification": "notification-uuid"
+    },
+]
