@@ -12,7 +12,7 @@ npm install --save ionic-platform-push
 
 ## Basic Usage
 
-Send a push:
+#### Send a push:
 
 ```javascript
 var Push = require('ionic-platform-push');
@@ -41,7 +41,7 @@ var notification = {
 sender.send(notification);
 ```
 
-Check the status of a push:
+#### Check the status of a push:
 
 ```javascript
 var Push = require('ionic-platform-push');
@@ -52,6 +52,20 @@ var sender = Push({
 });
 
 sender.status(uuid);
+```
+
+#### Get a list of recent tokens:
+
+```javascript
+var Push = require('ionic-platform-push');
+
+var sender = Push({
+  "api_key": "yourKey"
+});
+
+sender.tokens().then(function(tokens) {
+  console.log(tokens);
+});
 ```
 
 ## Promises
@@ -70,7 +84,7 @@ Check out the [examples folder](https://github.com/Fuiste/ionic-push-node/tree/m
 
 ## Set a Default Profile
 
-To specify a profile to use by default, simply update your config object to inclide a `profile` field like so:
+To specify a profile to use by default, simply update your config object to include a `profile` field like so:
 
 ```javascript
 var config = {
@@ -84,5 +98,6 @@ This will default notifications you send to the specified profile of none is pre
 ## Todos
 
 - [ ] Write some tests
+- [ ] Adding tokens
 - [ ] Token invalidation
 - [ ] Getting tokens for user_ids
