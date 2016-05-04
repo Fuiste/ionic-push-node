@@ -55,10 +55,32 @@ sender.status(uuid).then(function(status){
 });
 ```
 
-#### Get a list of recent tokens:
+#### List notifications:
+
+```javascript
+var page = 1;
+sender.notifications(page).then(function(notifications) {
+  console.log(notifications);
+});
+```
+
+**Note:** The `page` argument is optional, and will be defaulted to `1`.
+
+#### List tokens:
+
+Recent tokens:
 
 ```javascript
 sender.tokens().then(function(tokens) {
+  console.log(tokens);
+});
+```
+
+Tokens for a given `user_id`:
+
+```javascript
+var uuid = 'some-ionic-user-uuid';
+sender.tokens(uuid).then(function(tokens) {
   console.log(tokens);
 });
 ```

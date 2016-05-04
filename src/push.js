@@ -175,6 +175,63 @@ module.exports = function(config) {
   /**
    * Get an array of recent tokens
    */
+  push.notifications = function(pageNum) {
+    var self = this;
+    var deferred = q.defer();
+    var errors = [];
+
+    // Build URL params
+    var page = 1;
+    if (pageNum) {
+      page = pageNum
+    }
+
+    // Create request opts
+    var options = {
+      hostname: 'api.ionic.io',
+      path: '/push/notifications?page=' + page,
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + this.jwt
+      }
+    };
+
+    // Create request
+    var req = internet.request(options, function(res) {
+      res.setEncoding('utf8');
+      res.on('data', function(resp) {
+        var parsed = JSON.parse(resp);
+        self._handleResp(parsed).forEach(function(err) {
+          errors.push(err);
+        });
+
+        // Update the promise
+        if (errors.length) {
+          deferred.reject(errors);
+        } else if (parsed.data) {
+          deferred.resolve(parsed.data);
+        } else {
+          errors.push("ERROR: Server returned no data");
+          deferred.reject(errors);
+        }
+      });
+    });
+
+    req.on('error', function(error) {
+      errors.push(error);
+      deferred.reject(errors);
+    });
+
+    // Get that status!
+    req.end();
+
+    return deferred.promise;
+  };
+
+  /**
+   * Get an array of recent tokens
+   */
   push.tokens = function(userId) {
     var self = this;
     var deferred = q.defer();
