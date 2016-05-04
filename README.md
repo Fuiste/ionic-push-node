@@ -15,6 +15,10 @@ npm install --save ionic-platform-push
 #### Contents
 
 * [Initialize the Service](#initialize-the-service)
+* [Send a push](#send-a-push)
+* [Check the status of a push](#check-the-status-of-a-push)
+* [List notifications](#list-notifications)
+* [List tokens](#list-tokens)
 
 #### Initialize the Service
 
