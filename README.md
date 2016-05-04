@@ -117,4 +117,3 @@ This will default notifications you send to the specified profile of none is pre
 - [ ] Write some tests
 - [ ] Adding tokens
 - [ ] Token invalidation
-- [ ] Getting tokens for user_ids
