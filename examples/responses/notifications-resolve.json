@@ -1,0 +1,77 @@
+[
+  {
+    "uuid": "xxxxxxxx-xxxx-xxxx-be2d-2dced691f5ab",
+    "app_id": "XXXXXXXX",
+    "config": {
+      "tokens": [
+        "some-token"
+      ],
+      "profile": "dev",
+      "notification": {
+        "title": "Hi",
+        "message": "Hello world!",
+        "ios": {
+          "title": "Howdy",
+          "message": "Hello iOS!"
+        },
+        "android": {
+          "title": "Hey",
+          "message": "Hello Android!"
+        }
+      }
+    },
+    "state": "enqueued",
+    "status": "locked",
+    "created": "2016-05-03T03:26:45.026248+00:00"
+  },
+  {
+    "uuid": "xxxxxxxx-xxxx-xxxx-9ae9-b786d461cc9b",
+    "app_id": "XXXXXXXX",
+    "config": {
+      "tokens": [
+        "some-token"
+      ],
+      "profile": "dev",
+      "notification": {
+        "title": "Hi",
+        "message": "Hello world!",
+        "ios": {
+          "title": "Howdy",
+          "message": "Hello iOS!"
+        },
+        "android": {
+          "title": "Hey",
+          "message": "Hello Android!"
+        }
+      }
+    },
+    "state": "enqueued",
+    "status": "locked",
+    "created": "2016-05-03T03:25:59.181925+00:00"
+  },
+  {
+    "uuid": "xxxxxxxx-xxxx-xxxx-93ac-7425e5198cf2",
+    "app_id": "XXXXXXXX",
+    "config": {
+      "tokens": [
+        "some-other-token"
+      ],
+      "profile": "dev",
+      "notification": {
+        "title": "Hi",
+        "message": "Hello world!",
+        "ios": {
+          "title": "Howdy",
+          "message": "Hello iOS!"
+        },
+        "android": {
+          "title": "Hey",
+          "message": "Hello Android!"
+        }
+      }
+    },
+    "state": "enqueued",
+    "status": "locked",
+    "created": "2016-05-03T02:36:40.536694+00:00"
+  }
+]
