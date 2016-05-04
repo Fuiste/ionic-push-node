@@ -1,0 +1,7 @@
+[
+  {
+    "errors": ["Not a valid UUID"],
+    "error_type": "invalid_guid",
+    "parameter": "user_id"
+  }
+]

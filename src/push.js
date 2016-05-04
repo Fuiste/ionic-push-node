@@ -173,18 +173,24 @@ module.exports = function(config) {
   };
 
   /**
-   * Get an array of recentl tokens
+   * Get an array of recent tokens
    */
-  push.tokens = function() {
+  push.tokens = function(userId) {
     var self = this;
     var deferred = q.defer();
     var errors = [],
         tokens = [];
 
+    // Build URL params
+    var params = '';
+    if (userId) {
+      params += ('?user_id=' + userId);
+    }
+
     // Create request opts
     var options = {
       hostname: 'api.ionic.io',
-      path: '/push/tokens',
+      path: '/push/tokens' + params,
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
@@ -206,7 +212,10 @@ module.exports = function(config) {
           deferred.reject(errors);
         } else if (parsed.data) {
           parsed.data.forEach(function(tok) {
-            tokens.push(tok.token);
+            tokens.push({
+              "platform": tok.type,
+              "token": tok.token
+            });
           })
           deferred.resolve(tokens);
         } else {
