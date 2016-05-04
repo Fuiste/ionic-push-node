@@ -12,6 +12,10 @@ npm install --save ionic-platform-push
 
 ## Basic Usage
 
+#### Contents
+
+* [Initialize the Service](#initialize-the-service)
+
 #### Initialize the Service
 
 ```javascript
